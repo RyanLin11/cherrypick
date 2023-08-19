@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 import { Text, Button, Input} from '@chakra-ui/react'
 
-function StartScreen() {
+function StartScreen({ setDisplayState }) {
   return (
     <>
         <PageContainer>
@@ -11,14 +11,14 @@ function StartScreen() {
             </LogoSpace>
 
             <CreateOptionSpace>
-              <Button bg='#2e8c86' color='white'>Create</Button>
+              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Create</Button>
             </CreateOptionSpace>
             
             <JoinOptionSpace>
               <div style={{marginBottom: "3%"}}>
-                <Input placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center"/>
+                <Input type="number" placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center"/>
               </div>
-              <Button bg='#2e8c86' color='white'>Join</Button>
+              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Join</Button>
             </JoinOptionSpace>
                 
         </PageContainer>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import SelectionScreen from './SelectionScreen'
 import StartScreen from './StartScreen';
+import LobbyScreen from './LobbyScreen';
 
 function BaseComponent({ }) {
-  const [displayState, setDisplayState] = useState(2);
+  const [displayState, setDisplayState] = useState(1);
   // const socket = io("http://localhost:3000");
 
   // socket.on("connect", () => {
@@ -13,13 +14,19 @@ function BaseComponent({ }) {
   if (displayState && displayState == "1") {
     return (
       <>
-        <SelectionScreen />
+        <StartScreen setDisplayState={setDisplayState}/>
       </>
     )
-  } else if(displayState && displayState == "2"){
+  } else if (displayState && displayState == "2") {
+    return (
+      <>
+        <LobbyScreen setDisplayState={setDisplayState} />
+      </>
+    )
+  } else if(displayState && displayState == "3"){
     return(
       <>
-        <StartScreen />
+        <SelectionScreen setDisplayState={setDisplayState}/>
       </>
     )
   }else {
