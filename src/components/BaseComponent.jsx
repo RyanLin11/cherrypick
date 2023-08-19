@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import SelectionScreen from './SelectionScreen'
+import StartScreen from './StartScreen';
 
 function BaseComponent({ }) {
-  const [displayState, setDisplayState] = useState(1);
+  const [displayState, setDisplayState] = useState(2);
   // const socket = io("http://localhost:3000");
 
   // socket.on("connect", () => {
@@ -15,7 +16,13 @@ function BaseComponent({ }) {
         <SelectionScreen />
       </>
     )
-  } else {
+  } else if(displayState && displayState == "2"){
+    return(
+      <>
+        <StartScreen />
+      </>
+    )
+  }else {
     return (
       <div>bruh</div>
     )
