@@ -31,6 +31,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -56,6 +57,10 @@ In today's fast-paced world, choosing the perfect restaurant can be a daunting t
 * Google Cloud (Restaurant Data)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+[cherrypick Demo](https://ryanlin11.github.io/cherrypick/)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
