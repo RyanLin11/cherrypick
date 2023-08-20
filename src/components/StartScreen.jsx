@@ -8,7 +8,6 @@ function StartScreen({ setDisplayState, setRoomCode }) {
     const min = 1000; // Minimum value (inclusive)
     const max = 9999; // Maximum value (inclusive)
     const randomPIN = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log(randomPIN);
     return randomPIN;
   };
 

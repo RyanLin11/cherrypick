@@ -24,7 +24,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 4090
+    user_ratings_total: 4090,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipM9prYMtdWXzNYzW8ig3uOwh9eVHSK4VQiFjQ99=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -45,7 +48,10 @@ const sampleInput = [
     rating: 4.1,
     reference: 'ChIJ028Nzco0K4gRR2rUdyHwc28',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 3514
+    user_ratings_total: 3514,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipP7xGuzwdBRvJYfYv0_gNyO3Xi3tPJWpTyFclk5=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -65,7 +71,10 @@ const sampleInput = [
     rating: 3.8,
     reference: 'ChIJeVKEY9s1K4gRASca1ndaMmE',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 82
+    user_ratings_total: 82,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipOStVSUmcAeT4u_mT6qPmG5WzbdCXk70ee54s9I=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -85,7 +94,10 @@ const sampleInput = [
     rating: 3.5,
     reference: 'ChIJob19IMs0K4gRKbBaTxP3DEs',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 77
+    user_ratings_total: 77,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipOY0o0ZEoDzDVhR4D4SswvWFSUXkzlLpa-5B6_J=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -106,7 +118,10 @@ const sampleInput = [
     rating: 4.3,
     reference: 'ChIJtY7dIMs0K4gREEfQx6rkc-A',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 3759
+    user_ratings_total: 3759,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipOjKOBE9En_AbznPgg4dYe065ue6Tb9oPVZlUzO=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -127,7 +142,10 @@ const sampleInput = [
     rating: 4.3,
     reference: 'ChIJWcH-2zTL1IkRqB8N3YUw6-I',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 1416
+    user_ratings_total: 1416,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipMDHU2bNOZL9VUclJcB6LFA_z-GRxWcuYde8vdU=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -148,7 +166,10 @@ const sampleInput = [
     rating: 4.1,
     reference: 'ChIJcfbYz8o0K4gRUY0e-6eIcLs',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 1418
+    user_ratings_total: 1418,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipMhfT48Ib6SR0uCibfCyOpFFVL0BONkQUh8Doo4=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -175,7 +196,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 2282
+    user_ratings_total: 2282,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipONFkD7QGwEpGEUJ5hCQ4O10WJ0_vqLd5tK90lw=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -201,7 +225,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 355
+    user_ratings_total: 355,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipPjTllUobZzLDYokmSaGmC5eRdlpYnzGVJHpJGR=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -222,7 +249,10 @@ const sampleInput = [
     rating: 4.3,
     reference: 'ChIJo0hXvMo0K4gRnLuaJcnMs2c',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 921
+    user_ratings_total: 921,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipPbfnFu6ZvxJ5aPIXtFM9vzCZrcjOPJlfOG267m=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -249,7 +279,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 2756
+    user_ratings_total: 2756,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipNxckSdMkXC4JCr3Kb4MMWb-G3PqgScs1s3b53J=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -277,7 +310,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 4299
+    user_ratings_total: 4299,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipPN35QseWS26oGEggll3y7qZBpi-X9rZ6ohPg5S=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -303,7 +339,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 149
+    user_ratings_total: 149,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipOex315fKh9_rqgoSKg8wNGgiSamWm5NCstRqiZ=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -330,7 +369,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 65
+    user_ratings_total: 65,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipNm84rDeSV_nKGj4AbCFl93Vs_SyXjvMd8Dnuni=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -357,7 +399,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 1821
+    user_ratings_total: 1821,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipNCDRWqKtpR8eNdvLU6ajERrl2a-U2qnPhuvO_V=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -375,7 +420,10 @@ const sampleInput = [
     rating: 0,
     reference: 'ChIJVQK9zso0K4gRDpjM_bENv5o',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 0
+    user_ratings_total: 0,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: false,
+    imageURL: 'https://takumibbq.ca/wp-content/uploads/2020/09/takumiSig01-scaled.jpg',
   },
   {
     business_status: 'OPERATIONAL',
@@ -402,7 +450,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 87
+    user_ratings_total: 87,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipPMNa5f_EmY45aPElcIdhvtA4ZJGvB3nVXG2jBY=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -428,7 +479,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 57
+    user_ratings_total: 57,
+    wheelchair_accessible_entrance: false,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipMU8xfejMTnAiTK9tlGCHTOjPjdSaMmCL3R-0Ti=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -449,7 +503,10 @@ const sampleInput = [
     rating: 3.9,
     reference: 'ChIJHXUGTss0K4gRWWk-yayPs70',
     types: [ 'restaurant', 'food', 'point_of_interest', 'establishment' ],
-    user_ratings_total: 335
+    user_ratings_total: 335,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: false,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipNz9PGRZ_C1pXTpPrv7bQf76LaGBOMltmvytWBl=s1360-w1360-h1020',
   },
   {
     business_status: 'OPERATIONAL',
@@ -476,7 +533,10 @@ const sampleInput = [
       'point_of_interest',
       'establishment'
     ],
-    user_ratings_total: 333
+    user_ratings_total: 333,
+    wheelchair_accessible_entrance: true,
+    serves_vegetarian_food: true,
+    imageURL: 'https://lh3.googleusercontent.com/p/AF1QipPdC3sQWt4fNmimvzosHYoW2nQARAgT1JItN4Fs=s1360-w1360-h1020',
   }
 ]
 

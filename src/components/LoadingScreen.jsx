@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components";
 import { Spinner, Text } from '@chakra-ui/react'
 
-function LoadingScreen() {
+function LoadingScreen({ setDisplayState, formattedRestaurants }) {
+  useEffect(() => {
+    setTimeout(() => {
+      if (formattedRestaurants.length != 1) {
+        setDisplayState(3);
+      } else {
+        setDisplayState(5);
+      }
+    }, 1200);
+  }, []);
+
+
   return (
     <>
-        <PageContainer>
-            <LoadingWheelSpace>
-                <Spinner color='#2e8c86' size='xl'/>
-            </LoadingWheelSpace>
+      <PageContainer>
+        <LoadingWheelSpace>
+          <Spinner color='#2e8c86' size='xl' />
+        </LoadingWheelSpace>
 
-            <VotedSpace>
-                <Text as='b' fontSize='lg' color="#2e8c86">2/5 Finished Voting</Text>
-            </VotedSpace>
-        </PageContainer>
+        <VotedSpace>
+          <Text as='b' fontSize='lg' color="#2e8c86">4/4 Finished Voting</Text>
+        </VotedSpace>
+      </PageContainer>
     </>
   )
 }

@@ -18,45 +18,9 @@ import { AiOutlineCopy } from 'react-icons/ai';
 // Sample Input
 import sampleInput from './sampleinput';
 
-function LobbyScreen({ setDisplayState, roomCode }) {
+function LobbyScreen({ setDisplayState, roomCode, formattedRestaurants }) {
   const [users, setUsers] = useState(["Frank", "Ryan", "Edward", "Vanness"]);
   const [restaurants, setRestaurants] = useState(undefined);
-  const [formattedRestaurants, setFormattedRestaurants] = useState(undefined);
-  const [formatDone, setFormatDone] = useState(false);
-
-  useEffect(() => {
-    if (sampleInput) {
-      let formattedRestaurants = [];
-      sampleInput.forEach((restaurant) => {
-        const newRestaurant = restaurantCleanser(restaurant);
-        formattedRestaurants.push(newRestaurant);
-      });
-      // @@@@@@@@ MODIFY THIS @@@@@@@@@@
-      const maxNum = 8;
-      const selection = formattedRestaurants.slice(0, maxNum);
-      setFormattedRestaurants(selection);
-    }
-  }, [sampleInput]);
-
-  useEffect(() => {
-    if (formattedRestaurants) {
-      setFormatDone(true);
-      console.log('FORMATTED RESTAURANTS: ', formattedRestaurants);
-    }
-  }, [formattedRestaurants])
-
-  const restaurantCleanser = (r) => {
-    // takes in scuffed restaurant object, returns a cleaned one that doesn't have unnecessary stuff in it
-    const newObject = {};
-    newObject.location = r.formatted_address;
-    newObject.name = r.name;
-    newObject.priceLevel = r.price_level;
-    newObject.stars = r.rating;
-    newObject.numReviews = r.user_ratings_total;
-    // wheelchair accessible
-    // vegan
-    return newObject;
-  }
 
   const copyFunction = () => {
     let copyText = document.getElementById("room-code");
@@ -84,18 +48,12 @@ function LobbyScreen({ setDisplayState, roomCode }) {
             <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">
               <p>restaurants:</p>
             </Text>
-            {formatDone && formattedRestaurants.map((res) => <Text key={res.name}>{res.name}</Text>)}
+            {formattedRestaurants && formattedRestaurants.map((res) => <Text key={res.name}>{res.name}</Text>)}
           </div>
           {/* bozos */}
           <AvatarGroup size='md' max={1}>
             {users.map((user) => (<Avatar src='https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg' name={user} key={user} />))}
           </AvatarGroup>
-          {}
-          <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">
-            <p>restaurants:</p>
-
-          </Text>
-
           {/* restaurants */}
           {/* star slider */}
           {/* price slider */}
