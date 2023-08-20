@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import Carousel from './CarouselComponent';
 import StepperComponent from './StepperComponent';
 import ProgressComponent from './ProgressComponent';
 
 // Chakra UI
-import { Text, Image, Stack, Heading, Divider, ButtonGroup, Button } from '@chakra-ui/react'
+import { Text, Image, Stack, Heading, Divider, ButtonGroup, Button, useToast } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { Progress, Box, Badge } from '@chakra-ui/react'
 import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
@@ -15,16 +15,56 @@ import { StarIcon } from '@chakra-ui/icons'
 import { PiPlantLight, PiWheelchairLight, PiPlantFill, PiWheelchairFill } from 'react-icons/pi'
 import { AiOutlineCopy } from 'react-icons/ai';
 
-function LobbyScreen({ setDisplayState }) {
+// Sample Input
+import sampleInput from './sampleinput';
+
+function LobbyScreen({ setDisplayState, roomCode }) {
   const [users, setUsers] = useState(["Frank", "Ryan", "Edward", "Vanness"]);
+  const [restaurants, setRestaurants] = useState(undefined);
+  const [formattedRestaurants, setFormattedRestaurants] = useState(undefined);
+  const [formatDone, setFormatDone] = useState(false);
+
+  useEffect(() => {
+    if (sampleInput) {
+      let formattedRestaurants = [];
+      sampleInput.forEach((restaurant) => {
+        const newRestaurant = restaurantCleanser(restaurant);
+        formattedRestaurants.push(newRestaurant);
+      });
+      // @@@@@@@@ MODIFY THIS @@@@@@@@@@
+      const maxNum = 8;
+      const selection = formattedRestaurants.slice(0, maxNum);
+      setFormattedRestaurants(selection);
+    }
+  }, [sampleInput]);
+
+  useEffect(() => {
+    if (formattedRestaurants) {
+      setFormatDone(true);
+      console.log('FORMATTED RESTAURANTS: ', formattedRestaurants);
+    }
+  }, [formattedRestaurants])
+
+  const restaurantCleanser = (r) => {
+    // takes in scuffed restaurant object, returns a cleaned one that doesn't have unnecessary stuff in it
+    const newObject = {};
+    newObject.location = r.formatted_address;
+    newObject.name = r.name;
+    newObject.priceLevel = r.price_level;
+    newObject.stars = r.rating;
+    newObject.numReviews = r.user_ratings_total;
+    // wheelchair accessible
+    // vegan
+    return newObject;
+  }
 
   const copyFunction = () => {
     let copyText = document.getElementById("room-code");
     let text = copyText.innerText;
     navigator.clipboard.writeText(text);
-    // Alert
-    alert("Copied room code");
   }
+
+  const toast = useToast();
 
   return (
     <OuterContainer>
@@ -36,19 +76,20 @@ function LobbyScreen({ setDisplayState }) {
         <Body>
           {/* room code */}
           <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">room code:&nbsp;
-            <p id="room-code">{4726}</p>
-            <AiOutlineCopy onClick={copyFunction} size={40} />
+            <p id="room-code">{roomCode}</p>
+            <AiOutlineCopy onClick={() => {copyFunction(); toast({title: "Code copied", status: "success", duration: 3000, isClosable: true})}} size={40} />
           </Text>
+          {/* <Image src='https://media.tenor.com/bt4lr9-ANSEAAAAd/samurai-monkey.gif' /> */}
+          <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">
+              <p>restaurants:</p>
+            </Text>
+            {formatDone && formattedRestaurants.map((res) => <Text key={res.name}>{res.name}</Text>)}
+          </div>
           {/* bozos */}
           <AvatarGroup size='md' max={1}>
             {users.map((user) => (<Avatar src='https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg' name={user} key={user} />))}
           </AvatarGroup>
-          {/* <Image src='https://media.tenor.com/bt4lr9-ANSEAAAAd/samurai-monkey.gif' /> */}
-          <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">
-            <p>restaurants:</p>
-
-          </Text>
-
           {/* restaurants */}
           {/* star slider */}
           {/* price slider */}
@@ -82,7 +123,7 @@ const Body = styled.section`
   height: 85%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
 `
 

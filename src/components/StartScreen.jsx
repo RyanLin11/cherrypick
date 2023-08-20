@@ -1,27 +1,61 @@
 import React from 'react'
 import styled from "styled-components";
-import { Text, Button, Input} from '@chakra-ui/react'
+import { Text, Button, Input } from '@chakra-ui/react'
 
-function StartScreen({ setDisplayState }) {
+function StartScreen({ setDisplayState, setRoomCode }) {
+
+  const generateRandomPIN = () => {
+    const min = 1000; // Minimum value (inclusive)
+    const max = 9999; // Maximum value (inclusive)
+    const randomPIN = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomPIN);
+    return randomPIN;
+  };
+
+  const myURL = "https://localhost:3000";
+
+  const postRoomCode = async (code) => {
+    const response = await fetch(myURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        code: code,
+      }
+    });
+    // now that we have response..........
+  };
+
+  const onCreate = async () => {
+    const code = generateRandomPIN();
+    setRoomCode(code);
+    // const electionObject = await postRoomCode(code);
+    // .... more stuff from electionObject
+    setDisplayState(2);
+  }
+
+
+
   return (
     <>
-        <PageContainer>
-            <LogoSpace>
-              <Text as='b' fontSize='6xl' color="#2e8c86">cherrypick</Text>
-            </LogoSpace>
+      <PageContainer>
+        <LogoSpace>
+          <Text as='b' fontSize='6xl' color="#2e8c86">cherrypick</Text>
+        </LogoSpace>
 
-            <CreateOptionSpace>
-              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Create</Button>
-            </CreateOptionSpace>
-            
-            <JoinOptionSpace>
-              <div style={{marginBottom: "3%"}}>
-                <Input type="number" placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center"/>
-              </div>
-              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Join</Button>
-            </JoinOptionSpace>
-                
-        </PageContainer>
+        <CreateOptionSpace>
+          <Button onClick={onCreate} bg='#2e8c86' color='white'>Create</Button>
+        </CreateOptionSpace>
+
+        <JoinOptionSpace>
+          <div style={{ marginBottom: "3%" }}>
+            <Input type="number" placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center" />
+          </div>
+          <Button bg='#2e8c86' color='white'>Join</Button>
+        </JoinOptionSpace>
+
+      </PageContainer>
     </>
   )
 }

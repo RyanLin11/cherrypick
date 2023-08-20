@@ -7,6 +7,7 @@ import LobbyScreen from './LobbyScreen';
 
 function BaseComponent({ }) {
   const [displayState, setDisplayState] = useState(1);
+  const [roomCode, setRoomCode] = useState(undefined);
 
   // const socket = io("http://localhost:3000");
 
@@ -17,13 +18,13 @@ function BaseComponent({ }) {
   if (displayState && displayState == "1") {
     return (
       <>
-        <StartScreen setDisplayState={setDisplayState}/>
+        <StartScreen setDisplayState={setDisplayState} setRoomCode={setRoomCode}/>
       </>
     )
   } else if (displayState && displayState == "2") {
     return (
       <>
-        <LobbyScreen setDisplayState={setDisplayState} />
+        <LobbyScreen setDisplayState={setDisplayState} roomCode={roomCode} />
       </>
     )
   } else if(displayState && displayState == "3"){
