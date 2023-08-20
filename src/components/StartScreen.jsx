@@ -1,26 +1,27 @@
 import React from 'react'
 import styled from "styled-components";
-import { Text, Button, Input} from '@chakra-ui/react'
+import { Text, Button, Input, Flex} from '@chakra-ui/react'
 
 function StartScreen({ setDisplayState }) {
   return (
     <>
-        <PageContainer>
-            <LogoSpace>
-              <Text as='b' fontSize='6xl' color="#2e8c86">cherrypick</Text>
-            </LogoSpace>
+        <PageContainer style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
+            <PageContainer style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
+              <LogoSpace>
+                <Text as='b' fontSize='6xl' color="#2e8c86">cherrypick</Text>
+              </LogoSpace>
 
-            <CreateOptionSpace>
-              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Create</Button>
-            </CreateOptionSpace>
-            
-            <JoinOptionSpace>
-              <div style={{marginBottom: "3%"}}>
-                <Input type="number" placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center"/>
-              </div>
-              <Button onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Join</Button>
-            </JoinOptionSpace>
-                
+              <CreateOptionSpace style={{marginTop: "5%"}}>
+                <Button style={{ width: "320px"}}onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Create</Button>
+              </CreateOptionSpace>
+              
+              <JoinOptionSpace>
+                <div style={{marginBottom: "3%"}}>
+                  <Input type="number" placeholder='Room PIN' size='md' borderColor='#2e8c86' textAlign="center"/>
+                </div>
+                <Button style={{ width: "320px" }} onClick={() => setDisplayState(2)} bg='#2e8c86' color='white'>Join</Button>
+              </JoinOptionSpace>
+            </PageContainer>
         </PageContainer>
     </>
   )
@@ -32,7 +33,7 @@ const PageContainer = styled.div`
   padding: 10%;
   display: flex;
   flex-direction: column;
-  padding-top: 50%;
+  align-items:center;
   background-color: white;
 `;
 
