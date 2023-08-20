@@ -39,11 +39,11 @@ function LobbyScreen({ setDisplayState }) {
             <p id="room-code">{4726}</p>
             <AiOutlineCopy onClick={copyFunction} size={40} />
           </Text>
-          {/* bozos */}
+          {/* people */}
           <AvatarGroup size='md' max={1}>
             {users.map((user) => (<Avatar src='https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg' name={user} key={user} />))}
           </AvatarGroup>
-          {/* <Image src='https://media.tenor.com/bt4lr9-ANSEAAAAd/samurai-monkey.gif' /> */}
+          {}
           <Text style={{ display: "flex", flexDirection: "row", marginTop: "10px" }} as='b' fontSize='3xl' color="#2e8c86">
             <p>restaurants:</p>
 
