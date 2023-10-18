@@ -1,19 +1,7 @@
-import React, { useEffect } from 'react'
 import styled from "styled-components";
 import { Spinner, Text } from '@chakra-ui/react'
 
-function LoadingScreen({ setDisplayState, formattedRestaurants }) {
-  useEffect(() => {
-    setTimeout(() => {
-      if (formattedRestaurants.length != 1) {
-        setDisplayState(3);
-      } else {
-        setDisplayState(5);
-      }
-    }, 1200);
-  }, []);
-
-
+function LoadingScreen() {
   return (
     <>
       <PageContainer>
@@ -52,4 +40,4 @@ const VotedSpace = styled.div`
     justify-content: center;
 `;
 
-export default LoadingScreen
+export default LoadingScreen;

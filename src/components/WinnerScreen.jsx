@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import { Text, Box, Image, Badge, Button } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 import { PiPlantLight, PiWheelchairLight, PiPlantFill, PiWheelchairFill } from 'react-icons/pi'
 
-function WinnerScreen({ formattedRestaurants, setDisplayState, reset }) {
-
-  const [restaurant, setRestaurant] = useState(undefined);
-
-  useEffect(() => {
-    if (formattedRestaurants) {
-      setRestaurant(formattedRestaurants[0]);
-    }
-  }, [formattedRestaurants]);
-
-  // const restaurant1 = {
-  //     imageURL: 'https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/store/header/4f0203ac-a61f-4d0b-8edc-479b6407aa2b.jpg',
-  //     name: 'Lazeez Shawarma',
-  //     location: "170 University Ave W",
-  //     // # of $'s
-  //     priceLevel: 4,
-  //     numReviews: 150,
-  //     stars: 5,
-  //     // accessibility
-  //     wheelchair: true,
-  //     vegan: true,
-  // }
-
+function WinnerScreen({ restaurant, reset }) {
   // const dollarSigns1 = [];
   // for (let i = 0; i < restaurant1.priceLevel; i++) {
   //     dollarSigns1.push(<span key={i}>$</span>);
@@ -62,9 +39,9 @@ function WinnerScreen({ formattedRestaurants, setDisplayState, reset }) {
                   {/* {dollarSigns1}&nbsp;&nbsp;&nbsp;&nbsp; */}
                 </Box>
                 <IconsContainer style={{ marginTop: "10px" }}>
-                  {restaurant.vegan ? <PiPlantFill size={20} color="teal" /> : <></>}
+                  {restaurant.vegan && <PiPlantFill size={20} color="teal" />}
                   &nbsp;
-                  {restaurant.wheelchair ? <PiWheelchairFill size={20} color="teal" /> : <></>}
+                  {restaurant.wheelchair && <PiWheelchairFill size={20} color="teal" />}
                   &nbsp;
                 </IconsContainer>
               </Box>
@@ -101,7 +78,7 @@ function WinnerScreen({ formattedRestaurants, setDisplayState, reset }) {
         </RestaurantSpace>
 
         {/* Leave Button */}
-        <Button style={{marginTop: "10px", maxWidth: "378.4px"}} onClick={() => {setDisplayState(1); reset()}}>Leave</Button>
+        <Button style={{marginTop: "10px", maxWidth: "378.4px"}} onClick={reset}>Leave</Button>
 
       </PageContainer>
     )
