@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Carousel from './CarouselComponent';
 import StepperComponent from './StepperComponent';
 import ProgressComponent from './ProgressComponent';
+import { maxNum } from "./services/place";
 
 // Chakra UI
 import { Text, Image, Stack, Heading, Divider, ButtonGroup, Button } from '@chakra-ui/react'
@@ -18,7 +19,7 @@ function SelectionScreen({ restaurant1, restaurant2, onSelect, counter }) {
       <PageContainer>
         <Header>
           <Text as='b' fontSize='6xl' color="#2e8c86">cherrypick</Text>
-          <Progress style={{ maxWidth: "350px" }} hasStripe value={counter / 7 * 100} width="80%" colorScheme="teal" />
+          <Progress style={{ maxWidth: "350px" }} hasStripe value={counter / (maxNum - 1) * 100} width="80%" colorScheme="teal" />
         </Header>
         <Body>
 
