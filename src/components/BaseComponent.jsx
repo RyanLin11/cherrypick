@@ -16,7 +16,7 @@ function BaseComponent() {
 
   async function getRestaurants() {
     let restaurantData = await PlaceService.getPlaces();
-    setFormattedRestaurants(restaurantData.map(restaurantCleanser));
+    setRestaurants(restaurantData.map(restaurantCleanser));
   }
 
   useEffect(() => {
@@ -71,15 +71,15 @@ function BaseComponent() {
   }
 
   switch (displayState) {
-    case '1':
+    case 1:
       return <StartScreen onRoomCreate={handleRoomCreate} onRoomJoin={handleRoomJoin} />;
-    case '2':
+    case 2:
       return <LobbyScreen onPollStart={handlePollStart} roomCode={roomCode} users={users} restaurants={restaurants} />;
-    case '3':
+    case 3:
       return <SelectionScreen restaurant1={restaurants[0]} restaurant2={restaurants[1]} onSelect={handleSelect} counter={counter} />;
-    case '4':
+    case 4:
       return <LoadingScreen />;
-    case '5':
+    case 5:
       return <WinnerScreen restaurant={restaurants[0]} reset={reset}/>;
     default:
       return <div>Stage Not Found</div>;
