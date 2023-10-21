@@ -45,11 +45,13 @@ function BaseComponent() {
   }
 
   function handleSelect(option) {
-    setRestaurants(([option1, option2, ...rest]) => [...rest, option == 1? option1 : option2]);
+    const updatedRestaurants = [...restaurants, option == 1? restaurants[0] : restaurants[2]]
+    updatedRestaurants.splice(0, 2);
+    setRestaurants(updatedRestaurants);
     setCounter(ex => ex + 1);
     setDisplayState(4);
     setTimeout(() => {
-      if (restaurants.length != 1) {
+      if (updatedRestaurants.length != 1) {
         setDisplayState(3);
       } else {
         setDisplayState(5);
@@ -69,7 +71,6 @@ function BaseComponent() {
       imageURL: restaurant.imageURL
     };
   }
-
   switch (displayState) {
     case 1:
       return <StartScreen onRoomCreate={handleRoomCreate} onRoomJoin={handleRoomJoin} />;
