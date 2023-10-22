@@ -45,7 +45,7 @@ function BaseComponent() {
   }
 
   function handleSelect(option) {
-    const updatedRestaurants = [...restaurants, option == 1? restaurants[0] : restaurants[2]]
+    const updatedRestaurants = [...restaurants, option == 1? restaurants[0] : restaurants[1]]
     updatedRestaurants.splice(0, 2);
     setRestaurants(updatedRestaurants);
     setCounter(ex => ex + 1);
